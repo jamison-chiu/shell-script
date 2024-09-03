@@ -1,0 +1,20 @@
+# Search stringA and replace with stringB
+sed -i 's/stringA/stringB/g' target-file
+
+# Delete all empty lines between stringA and stringB not including stringA and stringB
+sed -i '/stringA/,/stringB/{/^\s*$/d}' target-file
+
+# Delete all lines between stringA and stringB including stringA and stringB
+sed -i '/stringA/,/stringB/d' target-file
+
+# Delete lines from LineN to LineM
+sed -i 'LineN,LineMd' target-file
+
+# Find StringA and append stringB after StringA
+sed -i '/StringA/a StringB' target-file
+# Find StringA and append stringB with space after StringA
+sed -i '/StringA/a\ \ StringB' target-file
+
+# Find StringA and append file content after StringA
+sed -i '/StringA/r append-file' target-file
+
